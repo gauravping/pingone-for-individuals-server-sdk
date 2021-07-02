@@ -74,7 +74,7 @@ public class DIDMessageHandler implements MessageHandler {
 
   /*
   This method initializes the distributedIdClient (https://git.shocard.io/ShoCard/ShoCard_Docs/wikis/home#distributedIdClient) which
-  is needed to communicate with the ShoCard API. The distributedIdClient is uses to make share and certify calls
+  is needed to communicate with the ShoCard API. The distributedIdClient is used to make share and certify calls
   (https://git.shocard.io/ShoCard/ShoCard_Docs/wikis/home#certify-data) but is also used to register to receive notifications
   from the ShoCard API.
    */

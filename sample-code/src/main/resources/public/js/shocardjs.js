@@ -24,10 +24,14 @@ function pollSession(id, mode) {
               $("#share-details").slideDown();
               $('#shocardid').val(data['_APPLICATION_INSTANCE_ID_']);
               var table = "";
-              table += '<tr><td>Selfie</td><td><img src="data:image/png;base64,' + data["CardImage"] + '" width="200"/></td></tr>';
-              table += '<tr><td>First Name</td><td>' + data["First Name"] + '</td></tr>';
-              table += '<tr><td>Last Name</td><td>' + data["Last Name"] + '</td></tr>';
-              table += '<tr><td>Date of Birth</td><td>' + data["Birth Date"] + '</td></tr>';
+              if (data['CardImage'])
+                table += '<tr><td>Selfie</td><td><img src="data:image/png;base64,' + data["CardImage"] + '" width="200"/></td></tr>';
+              if (data['First Name'])
+                table += '<tr><td>First Name</td><td>' + data["First Name"] + '</td></tr>';
+              if (data['Last Name'])
+                table += '<tr><td>Last Name</td><td>' + data["Last Name"] + '</td></tr>';
+              if (data['Birth Date'])
+                table += '<tr><td>Date of Birth</td><td>' + data["Birth Date"] + '</td></tr>';
               if (data['_SERVER_CERTIFICATION_ID_']) {
                 table += '<tr><td colspan="2">Cancel Server Issued Certification?&nbsp;<a href="/certifications/cancel/'
                   + data['_SERVER_CERTIFICATION_ID_']
