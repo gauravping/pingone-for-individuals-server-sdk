@@ -88,7 +88,5 @@ hs_err_pid*
 classes/
 *.swp
 
-entity.json
-
-## ShoCard entity file for local storage
-shocard-entity.properties
+## ApplicationInstance file for local storage
+application-instance.json

@@ -4,13 +4,52 @@
 
 ## Setup
 
-### maven
-To setup the project using mavne, please refer to the [distributedid-client-1.0.14.pom](distributedid-client-1.0.14.pom)
+Please include the following dependencies in your build script.
 
-### gradle
-To setup using gradle, please add following lines to your `build.gradle`.
+### Maven
+```xml
+<dependencies>
+  <dependency>
+    <groupId>com.squareup.retrofit2</groupId>
+    <artifactId>retrofit</artifactId>
+    <version>2.7.2</version>
+  </dependency>
+  <dependency>
+    <groupId>com.squareup.retrofit2</groupId>
+    <artifactId>converter-moshi</artifactId>
+    <version>2.7.2</version>
+  </dependency>
+  <dependency>
+    <groupId>com.squareup.moshi</groupId>
+    <artifactId>moshi</artifactId>
+    <version>1.9.3</version>
+  </dependency>
+  <dependency>
+    <groupId>org.bitbucket.b_c</groupId>
+    <artifactId>jose4j</artifactId>
+    <version>0.7.4</version>
+  </dependency>
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.7.30</version>
+  </dependency>
+  <dependency>
+    <groupId>com.squareup.okio</groupId>
+    <artifactId>okio</artifactId>
+    <version>1.16.0</version>
+  </dependency>
+  <dependency>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>3.14.7</version>
+  </dependency>
+</dependencies>
+```
 
-```gradle
+### Gradle
+```groovy
+dependencies {
     implementation 'com.squareup.retrofit2:converter-moshi:2.7.2'
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'
     implementation 'com.squareup.moshi:moshi:1.9.3'
@@ -18,4 +57,5 @@ To setup using gradle, please add following lines to your `build.gradle`.
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'com.squareup.okio:okio:1.16.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.7'
+}
 ```
