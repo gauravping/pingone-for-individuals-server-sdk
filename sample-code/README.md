@@ -7,7 +7,7 @@
 ```
 1. Open this folder in IntelliJ. The IntelliJ IDE will automatically recognize this as a gradle project.
 1. Once open IntelliJ will take a few minutes to run the first gradle build.
-1. The class com.shocard.demo.ServerMain is the starting point. You can run the ServerMain.main() function to start the server
+1. The class ServerMain is the starting point. You can run the ServerMain.main() function to start the server
 1. The demo project uses SparkJava, a micro framework for creating Java web applications
 1. The ServerMain.main() method will initialize the sparkjava library which will in-turn run a embedded Jetty server listening on port 4567
 1. Once successfully started you can go to **http://localhost:4567**
