@@ -54,8 +54,6 @@ public class ServerMain {
     DIDMessageHandler didMessageHandler = new DIDMessageHandler(sessionManager,
         applicationInstance);
 
-    CertificationHandler certificationHandler = new CertificationHandler(distributedIdClient);
-
     // if no callback URL is specified, poll for messages every 2 seconds
     if (serverConfig.getCallbackURL() == null) {
       EXECUTOR.scheduleAtFixedRate(() -> distributedIdClient.processMessages(didMessageHandler), 2,
@@ -72,10 +70,7 @@ public class ServerMain {
     get("/sessions/:sessionid", APPLICATION_JSON, sessionManager);
     post("/callback/notify", APPLICATION_JSON,
         (request, response) -> processMessages(distributedIdClient, didMessageHandler));
-    post("/certifications/certify/:sessionid", certificationHandler::certifyData);
-    get("/certifications/cancel/:certificationid", certificationHandler::cancelCertification);
     get("/send", (request, response) -> new ModelAndView(null, "send_request.ftl"), templateEngine);
-    post("/send", certificationHandler::sendRequest);
 
   }
 

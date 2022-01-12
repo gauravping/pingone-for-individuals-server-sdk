@@ -60,7 +60,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4>Please scan the QR code to exchange data with the ShoCard demo server.</h4>
+          <h4>Please scan the QR code to exchange data with the demo server.</h4>
         </div>
         <div class="panel-body">
 
@@ -75,13 +75,6 @@
                 Shared Data
               </div>
               <div class="panel-body" id="shared-data">
-              </div>
-              <div class="panel-footer">
-                <form method="post" action="/certifications/certify/${server_session_id}">
-                  <input type="hidden" name="applicationInstanceId" value="" id="shocardid"/>
-                  <h4>Would you like to certify this data?</h4>&nbsp;<button type="submit">Certify
-                  </button>
-                </form>
               </div>
             </div>
           </div>
