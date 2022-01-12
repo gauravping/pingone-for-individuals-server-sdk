@@ -19,6 +19,7 @@
 ## Customizing the code to work with PingOne Credentials
 
 1. Request the cards that were created in PingOne Credentials
+    - [<img src="images/CustomizationScreen1.png" width="300"/>](images/CustomizationScreen1.png)
     - Change [this file](https://gitlab.corp.pingidentity.com/shocard/pingone-for-individuals-server-sdk/-/blob/master/sample-code/src/main/java/com/pingidentity/shocard/demo/ReceiveShareHandler.java#L37) to request for the card by "Card Title". For example if the card title is "Course Completion" as displayed in the image, then the code in `ReceiveShareHandler` should be as follows
     ```
     requestData.put("requested_keys", ImmutableList.of(
