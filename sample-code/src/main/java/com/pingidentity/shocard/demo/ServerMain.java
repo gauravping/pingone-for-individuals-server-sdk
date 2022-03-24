@@ -63,6 +63,9 @@ public class ServerMain {
     ReceiveShareHandler receiveShareHandler = new ReceiveShareHandler(sessionManager,
         applicationInstance.getId(), distributedIdClient);
 
+    VerifyShareHandler verifyShareHandler = new VerifyShareHandler(sessionManager,
+        applicationInstance.getId(), distributedIdClient);
+
     TemplateEngine templateEngine = new FreeMarkerEngine();
 
     get("/status", (request, response) -> "OK");
@@ -70,7 +73,8 @@ public class ServerMain {
     get("/sessions/:sessionid", APPLICATION_JSON, sessionManager);
     post("/callback/notify", APPLICATION_JSON,
         (request, response) -> processMessages(distributedIdClient, didMessageHandler));
-    get("/send", (request, response) -> new ModelAndView(null, "send_request.ftl"), templateEngine);
+    get("/verify", verifyShareHandler, templateEngine);
+    post("/issue_credential", receiveShareHandler::issueCredential);
 
   }
 

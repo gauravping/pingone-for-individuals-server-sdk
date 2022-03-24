@@ -42,6 +42,7 @@ public class DIDMessageHandler implements MessageHandler {
 
     if (action.equalsIgnoreCase("certification_data")) {
       Map<String, String> storeData = new HashMap<>();
+      storeData.put("__APPLICATION_INSTANCE_ID__", applicationInstanceId.toString());
       for (Share share : shares) {
         final String cardType = share.getKeys().contains("CardType") ?
             share.getClaim().getData().get("CardType") + "->" :
@@ -55,6 +56,13 @@ public class DIDMessageHandler implements MessageHandler {
         ServerMain.SHARE_MAP.put(challenge.getId(), share);
 
       }
+
+      if (exceptions.size() > 0) {
+        storeData.put("Verification Result", "Unsuccessful");
+      } else {
+        storeData.put("Verification Result", "Successful");
+      }
+
       sessionManager.storeData(challenge.getId(), gson.toJson(storeData));
     }
   }
